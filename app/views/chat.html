@@ -1,0 +1,29 @@
+<br><br>
+<div class="jumbotron">
+  <h2>Mensageiro</h2>
+  <form>
+    <!--<input placeholder="Escreve aí..." >
+    <button type="submit" ng-click="addMessage(newMessage);newMessage = null;" class="btn btn-sm btn-raised">Enviar</button>-->
+    
+    <div class="form-group label-floating">
+      <div class="input-group">
+        <input class="form-control" ng-model="newMessage">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-fab btn-fab-mini" ng-click="addMessage(newMessage);newMessage = null;">
+            <i class="material-icons">send</i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </form>
+  
+  <table id="messages" ng-show="messages.length" class="table table-striped table-hover">
+    <tr ng-repeat="message in messages | reverse">
+      <td>{{message.text}}</td>
+      <td>{{message.$id}}</td>
+      <td>{{message}}</td>
+    </tr>
+  </table>
+  
+  <p class="alert alert-danger" ng-show="err">{{err}}</p>
+</div>
